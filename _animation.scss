@@ -1,0 +1,13 @@
+@keyframes rockFalling {
+  0% {
+    transform: translateX(120%);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
