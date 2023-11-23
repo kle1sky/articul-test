@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const rockItems = document.querySelectorAll('.rock__item')  //rockItem.childNodes[0].offsetWidth
+    let index = rockItems.length - 1;
+    const addClassWithDelay = () => {
+      if (index < rockItems.length) {
+        rockItems[index].classList.add('animation');
+        index--;
+        setTimeout(addClassWithDelay, 40);
+        console.log(index);
+      }
+    }
+
+    addClassWithDelay();
+
+    setTimeout(() => {
+      const rockText = document.querySelectorAll('.rock__text');
+
+      rockItems.forEach((item) => {
+        const array = Array.from(rockItems)
+        const index = array.indexOf(item)
+        const width = rockText[index].offsetWidth
+        console.log(width);
+        const borderWidth = 3
+
+        item.style.maxWidth = +width + borderWidth*2 + 'px';
+
+        item.classList.contains('rock__item--rotate') && item.classList.remove('active')
+        
+      })
+    }, 800)
+
+
+
     setTimeout(() => {
     const titles = document.querySelectorAll('.articul__title');
         titles.forEach((item) => {

@@ -213,23 +213,34 @@ body {
   line-height: 4.14763rem;
   letter-spacing: 0.0285rem;
   text-transform: uppercase;
-  padding: 0 1.5rem;
-  width: fit-content;
-  transition: all 0.3s ease;
+  max-width: fit-content;
+  transition: all 1s ease-in-out;
+}
+.rock__item.active {
+  transform: translateX(120%);
+  max-width: 100%;
+}
+.rock__item.animation {
+  animation: rockFalling 0.2s ease-in-out;
+  animation-fill-mode: forwards;
 }
 .rock__item--rotate {
-  transition: all 0.3s ease;
   rotate: 136deg;
   transform-origin: 50% 0%;
+  text-align: right;
 }
-.rock.active .rock__item {
-  width: auto;
-  transform: translateX(120%);
-}
-.rock.active .rock__item--rotate {
+.rock__item--rotate.active {
   transform: translateX(-120%);
   rotate: 180deg;
-  transform-origin: 50% 50%;
+  transform-origin: 50%;
+}
+.rock__item--rotate.animation {
+  animation: rockFallingRotate 0.2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.rock__text {
+  padding: 0 1.5rem;
+  text-wrap: nowrap;
 }
 
 .accordion {
@@ -523,9 +534,11 @@ body {
   .rock__item {
     font-size: 1.00169rem;
     font-weight: 500;
-    padding: 0 1.06rem;
     line-height: 2.9185rem;
     letter-spacing: 0.02006rem;
+  }
+  .rock__text {
+    padding: 0 1.06rem;
   }
   .articul {
     padding: 0 2.06rem;
@@ -733,6 +746,8 @@ body {
     font-size: 0.66925rem;
     line-height: 1.94994rem;
     letter-spacing: 0.01338rem;
+  }
+  .rock__text {
     padding: 0 0.5rem;
   }
   .articul {
@@ -977,8 +992,13 @@ body {
   0% {
     transform: translateX(120%);
   }
-  50% {
+  100% {
     transform: translateX(0);
+  }
+}
+@keyframes rockFallingRotate {
+  0% {
+    transform: translateX(-120%);
   }
   100% {
     transform: translateX(0);

@@ -150,9 +150,12 @@
     &__item {
       font-size: 1.00169rem;
       font-weight: 500;
-      padding: 0 1.06rem;
       line-height: 2.9185rem;
       letter-spacing: 0.02006rem;
+    }
+
+    &__text {
+      padding: 0 1.06rem;
     }
   }
 
@@ -408,6 +411,9 @@
       font-size: 0.66925rem;
       line-height: 1.94994rem;
       letter-spacing: 0.01338rem;
+    }
+
+    &__text {
       padding: 0 0.5rem;
     }
   }

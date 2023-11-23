@@ -248,28 +248,40 @@ body {
     line-height: 4.14763rem;
     letter-spacing: 0.0285rem;
     text-transform: uppercase;
-    padding: 0 1.5rem;
-    width: fit-content;
-    transition: all 0.3s ease;
+    max-width: fit-content;
+    transition: all 1s ease-in-out;
+
+    &.active {
+      transform: translateX(120%);
+      max-width: 100%;
+    }
+
+    &.animation {
+      animation: rockFalling 0.2s ease-in-out;
+      animation-fill-mode: forwards;
+    }
 
     &--rotate {
-      transition: all 0.3s ease;
       rotate: 136deg;
       transform-origin: 50% 0%;
+      text-align: right;
+
+      &.active {
+        transform: translateX(-120%);
+        rotate: 180deg;
+        transform-origin: 50%;
+      }
+
+      &.animation {
+        animation: rockFallingRotate 0.2s ease-in-out;
+        animation-fill-mode: forwards;
+      }
     }
   }
 
-  &.active {
-    .rock__item {
-      width: auto;
-      transform: translateX(120%);
-
-      &--rotate {
-        transform: translateX(-120%);
-        rotate: 180deg;
-        transform-origin: 50% 50%;
-      }
-    }
+  &__text {
+    padding: 0 1.5rem;
+    text-wrap: nowrap;
   }
 }
 
