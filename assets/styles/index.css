@@ -116,6 +116,11 @@ body {
   cursor: pointer;
   color: #fff;
   padding-bottom: 0.4rem;
+  transition: all 0.5s ease-in-out;
+}
+.articul__footer-highlight:hover {
+  border-bottom: 3px solid #c31e54;
+  color: #c31e54;
 }
 .articul__footer-highlight-group {
   display: inline;
