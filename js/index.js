@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         rockItems[index].classList.add('animation');
         index--;
         setTimeout(addClassWithDelay, 40);
-        console.log(index);
       }
     }
 
