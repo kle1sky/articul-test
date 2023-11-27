@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const array = Array.from(rockItems)
         const index = array.indexOf(item)
         const width = rockText[index].offsetWidth
-        console.log(width);
         const borderWidth = 3
 
         item.style.maxWidth = +width + borderWidth*2 + 'px';
